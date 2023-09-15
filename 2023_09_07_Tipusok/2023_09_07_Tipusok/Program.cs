@@ -64,16 +64,38 @@ namespace _2023_09_07_Tipusok
             // aritmetikai
             int b = 11;
             int d = 21;
-            int f = 31;
             Console.WriteLine(b + " " + d);
-            Console.WriteLine("Összeadás: "+b+d);
-            //Console.WriteLine("Kivonás: "+b-d);
+            Console.WriteLine("Összeadás: "+(b+d));
+            Console.WriteLine("Kivonás: "+(b-d));
             Console.WriteLine("Szorzás: "+b*d);
             Console.WriteLine("Osztás: "+b/d);
             Console.WriteLine("Maradék: "+b%d);
-            Console.WriteLine("Értéknövelő: ");
-            Console.WriteLine("Értékcsökkentő: ");
+            // b += 1; b = b + 1; b++;
+            //b++;
+            //++b;
+            Console.WriteLine("Értéknövelő: "+ ++b);
+            Console.WriteLine("Értéknövelő: " + b);
+            //d -=1; d = d - 1;
+            d--;
+            Console.WriteLine("Értékcsökkentő: "+d);
 
+            // +=, -=, *=, /=, %=
+
+            //Logikai operátorok
+            //és - and - && (altGr + c)
+            //vagy - or - || (altGr + w)
+            //not - !
+
+            // Bitenkénti műveletek: és &, vagy |,
+            // xor ^, not ~
+            // xor - kizáró vagy
+
+            Console.WriteLine("46 & 25 = " + (46 & 25));
+
+            // Relációk
+            // ==, !=, <, <=, >, >=
+
+            //random, math
 
 
             Console.ReadLine();
