@@ -79,6 +79,11 @@ namespace _2023_09_14_Konverzitas
             // HF feladatok 2021-2022.pdf
             // 1-6. feladatok
 
+            double el = 12.3;
+            double l = el * Math.Sqrt(2);
+            double t = el * Math.Sqrt(3);
+            Console.WriteLine("{0} {1} {2}", el, l, t);
+
 
             Console.ReadLine();
         }
