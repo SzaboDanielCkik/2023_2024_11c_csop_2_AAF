@@ -95,6 +95,23 @@ namespace _2023_09_21_Ciklusok
 
             // 26-28
 
+            int osszeg = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                int rnd = r.Next(0, 9);
+                Console.Write(rnd + " ");
+                osszeg += rnd;
+            }
+            Console.WriteLine("\nA számok összege: " + osszeg);
+            Console.WriteLine("\nA számok átlaga: " + osszeg/10);
+
+            int rnd2;
+            do
+            {
+                rnd2 = r.Next(10, 100);
+                Console.Write(rnd2 + " ");
+            } while (rnd2 % 7 != 0);
+
             Console.ReadLine();
         }
     }

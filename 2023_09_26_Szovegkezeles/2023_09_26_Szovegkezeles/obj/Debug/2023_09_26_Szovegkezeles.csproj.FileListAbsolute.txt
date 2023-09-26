@@ -1,0 +1,7 @@
+H:\2023-2024\11.c csop 2 AAF\2023_09_26_Szovegkezeles\2023_09_26_Szovegkezeles\bin\Debug\2023_09_26_Szovegkezeles.exe.config
+H:\2023-2024\11.c csop 2 AAF\2023_09_26_Szovegkezeles\2023_09_26_Szovegkezeles\bin\Debug\2023_09_26_Szovegkezeles.exe
+H:\2023-2024\11.c csop 2 AAF\2023_09_26_Szovegkezeles\2023_09_26_Szovegkezeles\bin\Debug\2023_09_26_Szovegkezeles.pdb
+H:\2023-2024\11.c csop 2 AAF\2023_09_26_Szovegkezeles\2023_09_26_Szovegkezeles\obj\Debug\2023_09_26_Szovegkezeles.csproj.AssemblyReference.cache
+H:\2023-2024\11.c csop 2 AAF\2023_09_26_Szovegkezeles\2023_09_26_Szovegkezeles\obj\Debug\2023_09_26_Szovegkezeles.csproj.CoreCompileInputs.cache
+H:\2023-2024\11.c csop 2 AAF\2023_09_26_Szovegkezeles\2023_09_26_Szovegkezeles\obj\Debug\2023_09_26_Szovegkezeles.exe
+H:\2023-2024\11.c csop 2 AAF\2023_09_26_Szovegkezeles\2023_09_26_Szovegkezeles\obj\Debug\2023_09_26_Szovegkezeles.pdb
