@@ -64,6 +64,51 @@ namespace _2023_10_04_Szovegkezeles3
              * Generálj ki mellé 10 hosszú kis és nagy betűkből
              * és karakterekből álló jelszót! Vegyesen legyen!*/
 
+            string nev = "Kis Pista";
+            Console.WriteLine(nev);
+            string vnev = "", knev="";
+            int j = 0;
+            while (j < nev.Length && nev[j] != ' ')
+            {
+                vnev += nev[j];
+                j++;
+            }
+            j = nev.Length - 1;
+            while (j >= 0 && nev[j] != ' ')
+            {
+                knev = nev[j] + knev;
+                j--;
+            }
+            /*Console.WriteLine(vnev);
+            Console.WriteLine(knev);*/
+
+            string azonosito = "";
+            vnev = vnev.ToLower();
+            knev = knev.ToLower();
+            if (vnev.Length < 3)
+                azonosito += vnev;
+            else
+                azonosito += ""+vnev[0] + vnev[1] + vnev[2];
+
+            if (knev.Length < 3)
+                azonosito += knev;
+            else
+                azonosito += ""+knev[0] + knev[1] + knev[2];
+            Console.WriteLine(azonosito);
+
+            Random r = new Random();
+            string jelszo = "";
+            for (int x = 0; x < 10; x++)
+            {
+                int milegyen = r.Next(1, 4);
+                if (milegyen == 1)
+                    jelszo += (char)r.Next(97, 123);
+                else if (milegyen == 2)
+                    jelszo += (char)r.Next(65, 91);
+                else
+                    jelszo += r.Next(0,10);
+            }
+            Console.WriteLine(jelszo);
 
             Console.ReadLine();
         }
