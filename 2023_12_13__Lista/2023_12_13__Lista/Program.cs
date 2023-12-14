@@ -8,7 +8,7 @@ namespace _2023_12_13__Lista
 {
     class Program
     {
-        
+        static List<int> szamok = new List<int>();
         static void Main(string[] args)
         {
             /* Lista
@@ -21,15 +21,83 @@ namespace _2023_12_13__Lista
 
             //ListaAlapok();
 
-            // 1. Eljárás: Feltölti a listát egy a felhasználó által bekért elemszámmal [10,50] között!
+            // 1. Eljárás: Feltölti a listát egy a felhasználó által bekért elemszámmal a számok [10,50] közöttiek legyenek!
             // 2. Eljárás: Hívjon meg egy ön által megírt függvényt, ami megadja a számok összegét!
             // 3. Eljárás: Hívjon meg egy ön által megírt függvényt, ami megadja a lekisebb szám indexét!
             // 4. Eljárás: Hívjon meg egy ön által megírt függvényt, ami megadja a paraméterben szereplő szám indexét, ha benne van a listában ha nincs akkor (-1)-et adjon vissza!
             // 5. Eljárás: Ami rendezi a lista elemeit csökkenő sorrendben!
+            // 6. Van-e ismétlődő elem a listában. (működjön a nem rendezett listára is)
 
+            Feltolteltes(szamok, 13);
+            Kiiratas(szamok);
+            Feladat2();
+            Feladat3();
+            Feladat4();
 
             Console.ReadLine();
         }
+
+        static void Feladat4()
+        {
+            Console.WriteLine("4. feladat");
+            int szam = 26;
+            Console.WriteLine("Van-e {0} szám a listában: {1}" , szam, VaneListabanSzam(szamok, szam));
+        }
+
+        static int VaneListabanSzam(List<int> lista, int a)
+        {
+            int i = 0;
+            while (i < lista.Count && lista[i] != a)
+                i++;
+            //bool vane = i < lista.Count;
+            if (i < lista.Count)
+                return i;
+            else
+                return -1;
+        }
+
+        static void Feladat3()
+        {
+            Console.WriteLine("3. feladat");
+            int index = MinimumIndex(szamok);
+            Console.WriteLine("A legkisebb szám helye: " + (index + 1));
+        }
+
+        static int MinimumIndex(List<int> lista)
+        {
+            int mini = 0;
+            for (int i = 1; i < lista.Count; i++)
+            {
+                if (lista[i] < lista[mini])
+                    mini = i;
+            }
+            return mini;
+        }
+
+        static void Feladat2()
+        {
+            Console.WriteLine("2. feladat");
+            Console.WriteLine("A számok összege: " + ListaSum(szamok));
+        }
+
+        static int ListaSum(List<int> lista)
+        {
+            int osszeg = 0;
+            for (int i = 0; i < lista.Count; i++)
+                osszeg += lista[i];
+            return osszeg;
+        }
+
+        static void Feltolteltes(List<int> lista, int n)
+        {
+            Random r = new Random();
+            for (int i = 0; i < n; i++)
+            {
+                lista.Add(r.Next(10, 51));
+            }
+        }
+
+
         static void ListaAlapok()
         {
             List<int> lista = new List<int>();
