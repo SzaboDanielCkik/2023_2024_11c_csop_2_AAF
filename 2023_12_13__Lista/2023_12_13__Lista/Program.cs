@@ -27,14 +27,68 @@ namespace _2023_12_13__Lista
             // 4. Eljárás: Hívjon meg egy ön által megírt függvényt, ami megadja a paraméterben szereplő szám indexét, ha benne van a listában ha nincs akkor (-1)-et adjon vissza!
             // 5. Eljárás: Ami rendezi a lista elemeit csökkenő sorrendben!
             // 6. Van-e ismétlődő elem a listában. (működjön a nem rendezett listára is)
+            // Extra: Függvény: Adja meg a számok móduszát 200 elemre nézve!
 
-            Feltolteltes(szamok, 13);
+
+            Feltolteltes(szamok, 5);
             Kiiratas(szamok);
             Feladat2();
             Feladat3();
             Feladat4();
+            Feladat5();
+            Feladat6();
 
             Console.ReadLine();
+        }
+
+        static void Feladat6()
+        {
+            Console.WriteLine("6. feladat");
+            if (VaneIsmetlodoElem(szamok))
+                Console.WriteLine("Van benne ismétlődés");
+            else
+                Console.WriteLine("Nincs benne ismétlődés");
+        }
+
+        static bool VaneIsmetlodoElem(List<int> lista)
+        {
+            int i = 0;
+            bool vane = false;
+            while (i < lista.Count - 1 && !vane)
+            {
+                int j = i + 1;
+                while (j < lista.Count && lista[i] != lista[j])
+                    j++;
+                if (j < lista.Count)
+                    vane = true;
+                else
+                    i++;
+            }
+            return vane;
+        }
+
+        static void Feladat5()
+        {
+            Console.WriteLine("5. feladat");
+            Console.WriteLine("A rendezett lista: ");
+            ListaRendezese(szamok);
+            Kiiratas(szamok);
+        }
+
+        static void ListaRendezese(List<int> szamok)
+        {
+            for (int i = 1; i < szamok.Count; i++)
+            {
+                for (int j = i ; j > 0; j--)
+                {
+                    if (szamok[j] < szamok[j-1])
+                    {
+                        int sv = szamok[j] ;
+                        szamok[j] = szamok[j-1];
+                        szamok[j-1] = sv;
+                    }
+                }
+            }
         }
 
         static void Feladat4()
