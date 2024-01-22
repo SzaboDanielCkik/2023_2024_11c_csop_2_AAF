@@ -30,15 +30,86 @@ namespace _2023_12_13__Lista
             // Extra: Függvény: Adja meg a számok móduszát 200 elemre nézve!
 
 
-            Feltolteltes(szamok, 5);
+            Feltolteltes(szamok,200);
             Kiiratas(szamok);
             Feladat2();
             Feladat3();
             Feladat4();
             Feladat5();
             Feladat6();
+            FeladatExtra();
 
             Console.ReadLine();
+        }
+
+        static void FeladatExtra()
+        {
+            Console.WriteLine("Extra feladat");
+            Console.WriteLine("A lista módusza:");
+            List<int> egeszek = EgyediSzamok(szamok);
+            List<int> darabok = DarabSzamitas(egeszek, szamok);
+            int max = Maximum(darabok);
+            List<int> modusz = Modusz(darabok, max, egeszek);
+            Kiiratas(modusz);
+        }
+
+        static List<int> Modusz(List<int> darabok, int max, List<int> egyedik)
+        {
+            List<int> modusz = new List<int>();
+
+            for (int i = 0; i < darabok.Count; i++)
+            {
+                if (darabok[i] == max)
+                    modusz.Add(egyedik[i]);
+            }
+            return modusz;
+        }
+
+        static int Maximum(List<int> lista)
+        {
+            int maxe = lista[0];
+            for (int i = 1; i < lista.Count; i++)
+            {
+                if (maxe < lista[i])
+                    maxe = lista[i];
+            }
+            return maxe;
+        }
+
+        static List<int> DarabSzamitas(List<int> egyedik, List<int> lista)
+        {
+            List<int> darabok = new List<int>();
+
+            for (int i = 0; i < egyedik.Count; i++)
+            {
+                int szam = egyedik[i];
+                int darab = DarabSzamAListaban(lista, szam);
+                darabok.Add(darab);
+            }
+
+            return darabok;
+        }
+
+        static int DarabSzamAListaban(List<int> lista, int a)
+        {
+            int db = 0;
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (lista[i] == a)
+                    db++;
+            }
+            return db;
+        }
+
+        static List<int> EgyediSzamok(List<int> lista)
+        {
+            List<int> egyedik = new List<int>();
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (VaneListabanSzamIndex(egyedik, lista[i]) == -1)
+                    egyedik.Add(lista[i]);
+            }
+            return egyedik;
         }
 
         static void Feladat6()
@@ -95,10 +166,10 @@ namespace _2023_12_13__Lista
         {
             Console.WriteLine("4. feladat");
             int szam = 26;
-            Console.WriteLine("Van-e {0} szám a listában: {1}" , szam, VaneListabanSzam(szamok, szam));
+            Console.WriteLine("Van-e {0} szám a listában: {1}" , szam, VaneListabanSzamIndex(szamok, szam));
         }
 
-        static int VaneListabanSzam(List<int> lista, int a)
+        static int VaneListabanSzamIndex(List<int> lista, int a)
         {
             int i = 0;
             while (i < lista.Count && lista[i] != a)
