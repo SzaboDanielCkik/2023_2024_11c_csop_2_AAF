@@ -21,20 +21,76 @@ namespace _2024_01_11_GyakorlasKockadobas
 
 
             ListaFeltoltes();
-            StatisztikaKeszites();
-            TombKiiratas();
+            //StatisztikaKeszites();
+            //TombKiiratas();
 
             KoordinataRendszer();
-            DiagramAbrazolas();
+            Szimulalas();
 
+            // HF Másik diagram, mási intervallummal
 
             Console.ReadLine();
 
         }
 
+        static void Szimulalas()
+        {
+            List<int> aktDobasok = new List<int>();
+            // végignézzük az összes dobást egyesével
+            for (int i = 0; i < kockadobasok.Count; i++)
+            {
+                aktDobasok.Add(kockadobasok[i]);
+                if (i % 10 == 0)
+                {
+                    //1000 ms = 1 sec;
+                    System.Threading.Thread.Sleep(100);
+                    Console.Clear();
+                    int[] aktStat = StatisztikaKeszites(aktDobasok);
+                    TombKiiratas(aktStat);
+                    KoordinataRendszer();
+                    DiagramAbrazolas(aktStat);
+                }
+            }
+        }
+
+        static void DiagramAbrazolas(int[] aktStat)
+        {
+            int maxe = Maximum(aktStat);
+            int mine = Minimum(aktStat);
+            //double intervall = (double)maxe / 10;
+            double intervall = (double)(maxe-mine) / 10;
+            for (int j = 0; j < 6; j++)
+            {
+                //double db = (aktStat[j] ) / intervall + 1;
+                double db = (aktStat[j] -mine ) / intervall + 1;
+                for (int i = 0; i < db; i++)
+                {
+                    Console.SetCursorPosition(7 + (j * 2), 14 - i);
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.Write(" ");
+                }
+            }
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+
         static void DiagramAbrazolas()
         {
-            int egyesDb = statisztika[0];
+            int maxe = Maximum();
+            int mine = Minimum();
+            double intervall =(double) (maxe - mine) / 10;
+            for (int j = 0; j < 6; j++)
+            {
+                //int db = statisztika[j];
+                double db = (statisztika[j]-mine)/intervall+1;
+                for (int i = 0; i < db; i++)
+                {
+                    Console.SetCursorPosition(7+(j*2), 14 - i);
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.Write(" ");
+                }
+            }
+
+            /*int egyesDb = statisztika[0];
             for (int i = 0; i < egyesDb; i++)
             {
                 Console.SetCursorPosition(7, 14-i);
@@ -45,7 +101,41 @@ namespace _2024_01_11_GyakorlasKockadobas
             {
                 Console.SetCursorPosition(9, 14 - i);
                 Console.Write("X");
-            }
+            }*/
+        }
+
+        static int Minimum(int[] aktStat)
+        {
+            int me = aktStat[0];
+            for (int i = 1; i < aktStat.Length; i++)
+                if (me > aktStat[i])
+                    me = aktStat[i];
+            return me;
+        }
+        static int Minimum()
+        {
+            int me = statisztika[0];
+            for (int i = 1; i < statisztika.Length; i++)
+                if (me > statisztika[i])
+                    me = statisztika[i];
+            return me;
+        }
+
+        static int Maximum(int[] aktStat)
+        {
+            int me = aktStat[0];
+            for (int i = 1; i < aktStat.Length; i++)
+                if (me < aktStat[i])
+                    me = aktStat[i];
+            return me;
+        }
+        static int Maximum()
+        {
+            int me = statisztika[0];
+            for (int i = 1; i < statisztika.Length; i++)
+                if (me < statisztika[i])
+                    me = statisztika[i];
+            return me;
         }
 
         static void KoordinataRendszer()
@@ -72,10 +162,27 @@ namespace _2024_01_11_GyakorlasKockadobas
 
         }
 
+        static void TombKiiratas(int[] aktStat)
+        {
+            for (int i = 0; i < aktStat.Length; i++)
+                Console.Write(aktStat[i] + " ");
+        }
+
         static void TombKiiratas()
         {
             for (int i = 0; i < statisztika.Length; i++)
                 Console.Write(statisztika[i] + " ");
+        }
+
+        static int[] StatisztikaKeszites(List<int> aktDobasok)
+        {
+            int[] aktStatisztika = new int[6];
+            for (int i = 0; i < aktDobasok.Count; i++)
+            {
+                int index = aktDobasok[i] - 1;
+                aktStatisztika[index]++;
+            }
+            return aktStatisztika;
         }
 
         static void StatisztikaKeszites()
