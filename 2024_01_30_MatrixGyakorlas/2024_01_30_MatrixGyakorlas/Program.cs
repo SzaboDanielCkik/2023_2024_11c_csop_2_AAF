@@ -20,9 +20,33 @@ namespace _2024_01_30_MatrixGyakorlas
             MatrixKiir(matrix);
             Feladat2();
             Feladat3();
+            Feladat4();
 
             Console.ReadLine();
 
+        }
+
+        static void Feladat4()
+        {
+            Console.Write("Adja meg a sor számát: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Adja meg az oszlop számát: ");
+            int m = Convert.ToInt32(Console.ReadLine());
+            SzomszedokMegadasa(n-1,m-1);
+        }
+
+        static void SzomszedokMegadasa(int sor, int oszlop)
+        {
+            for (int i = -1; i < 2; i++)
+            {
+                for (int j = -1; j < 2; j++)
+                {
+                    if((i!=0 || j!=0) && 
+                        sor+i>=0 && oszlop+j>=0 && 
+                        sor+i<matrix.GetLength(0) && oszlop+j < matrix.GetLength(1))
+                        Console.Write(matrix[sor + i, oszlop + j] + " ");
+                }
+            }
         }
 
         static void Feladat3()
