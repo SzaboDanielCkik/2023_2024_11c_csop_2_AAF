@@ -20,6 +20,7 @@ namespace _2024_02_15_MatrixToList
              * A felhasználó adja meg, hányadik elemet szeretné lekérni a listából. Add meg, hogy az az indexű elem, hányadik sor, hányadik oszlopában van a mátrixban.
                Van egy k darabú lista. Hogyan tesszük be a legszükebb  nxm-es mátrixba!
                19 elemű lista -> 4x5 -ös mátrixba
+               26 elemű lista -> 5x6 -os mátrixba
              */
 
             MatrixFeltoltes();
