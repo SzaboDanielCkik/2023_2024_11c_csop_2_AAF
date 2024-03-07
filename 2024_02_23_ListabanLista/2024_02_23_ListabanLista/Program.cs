@@ -27,10 +27,31 @@ namespace _2024_02_23_ListabanLista
                 Console.WriteLine("Van benne {0}-val osztható szám, a {1}. listában", szam, index+1);
             else
                 Console.WriteLine("Nincs benne {0}-val osztható szám", szam);
-
-
-
+            int[] legkisebbIndexek = MinimumErtekSorOszlop();
+            Console.WriteLine("A legkisebb szám a(z) {0}. sorban a {1}. elem.", legkisebbIndexek[0]+1, legkisebbIndexek[1]+1);
             Console.ReadLine();
+        }
+
+        static int[] MinimumErtekSorOszlop()
+        {
+            //int[] st = new int[2];
+            int mins = 0;
+            int mino = 0;
+            for (int i = 0; i < listak.Count; i++)
+            {
+                for (int j = 0; j < listak[i].Count; j++)
+                {
+                    if (listak[i][j] > listak[mins][mino])
+                    {
+                        mins = i;
+                        mino = j;
+                    }
+                }
+            }
+            //st[0] = mins;
+            //st[1] = mino;
+            //return st;
+            return new int[] {mins, mino};
         }
 
         static int VaneOszthatoSzamIndex(int szam)
