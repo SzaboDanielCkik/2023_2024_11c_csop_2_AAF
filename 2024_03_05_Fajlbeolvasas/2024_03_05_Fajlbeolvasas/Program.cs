@@ -26,8 +26,29 @@ namespace _2024_03_05_Fajlbeolvasas
             // Rendezd a súly alapján az adatokat
 
             Feladat1();
+            Rendezes();
+            ListaKiirat();
 
             Console.ReadLine();
+        }
+
+        static void Rendezes()
+        {
+            for (int i = 0; i < leadasok.Count-1; i++)
+            {
+                for (int j = i+1; j < leadasok.Count; j++)
+                {
+                    if (leadasok[i].suly > leadasok[j].suly)
+                    {
+                        Papirleadas sv = leadasok[i];
+                        leadasok[i] = leadasok[j];
+                        leadasok[j] = sv;
+                        //int sv = leadasok[i].suly;
+                        //leadasok[i].suly = leadasok[j].suly;
+                        //leadasok[j].suly = sv;
+                    }
+                }
+            }
         }
 
         static void Feladat1()
@@ -77,7 +98,6 @@ namespace _2024_03_05_Fajlbeolvasas
                 Papirleadas sv = new Papirleadas(st[0], st[1], Convert.ToInt32(st[2]));
                 leadasok.Add(sv);
             }
-
             f.Close();
         }
 
