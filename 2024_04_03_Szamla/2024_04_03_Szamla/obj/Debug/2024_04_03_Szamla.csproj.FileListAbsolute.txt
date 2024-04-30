@@ -1,0 +1,7 @@
+H:\2023-2024\11.c csop 2 AAF\2024_04_03_Szamla\2024_04_03_Szamla\bin\Debug\2024_04_03_Szamla.exe.config
+H:\2023-2024\11.c csop 2 AAF\2024_04_03_Szamla\2024_04_03_Szamla\bin\Debug\2024_04_03_Szamla.exe
+H:\2023-2024\11.c csop 2 AAF\2024_04_03_Szamla\2024_04_03_Szamla\bin\Debug\2024_04_03_Szamla.pdb
+H:\2023-2024\11.c csop 2 AAF\2024_04_03_Szamla\2024_04_03_Szamla\obj\Debug\2024_04_03_Szamla.csproj.AssemblyReference.cache
+H:\2023-2024\11.c csop 2 AAF\2024_04_03_Szamla\2024_04_03_Szamla\obj\Debug\2024_04_03_Szamla.csproj.CoreCompileInputs.cache
+H:\2023-2024\11.c csop 2 AAF\2024_04_03_Szamla\2024_04_03_Szamla\obj\Debug\2024_04_03_Szamla.exe
+H:\2023-2024\11.c csop 2 AAF\2024_04_03_Szamla\2024_04_03_Szamla\obj\Debug\2024_04_03_Szamla.pdb
