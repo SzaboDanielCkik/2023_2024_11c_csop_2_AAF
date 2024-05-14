@@ -1,0 +1,7 @@
+h:\2023-2024\11.c csop 2 AAF\2024_05_03_Hallgato\2024_05_03_Hallgato\bin\Debug\2024_05_03_Hallgato.exe.config
+h:\2023-2024\11.c csop 2 AAF\2024_05_03_Hallgato\2024_05_03_Hallgato\bin\Debug\2024_05_03_Hallgato.exe
+h:\2023-2024\11.c csop 2 AAF\2024_05_03_Hallgato\2024_05_03_Hallgato\bin\Debug\2024_05_03_Hallgato.pdb
+h:\2023-2024\11.c csop 2 AAF\2024_05_03_Hallgato\2024_05_03_Hallgato\obj\Debug\2024_05_03_Hallgato.csproj.AssemblyReference.cache
+h:\2023-2024\11.c csop 2 AAF\2024_05_03_Hallgato\2024_05_03_Hallgato\obj\Debug\2024_05_03_Hallgato.csproj.CoreCompileInputs.cache
+h:\2023-2024\11.c csop 2 AAF\2024_05_03_Hallgato\2024_05_03_Hallgato\obj\Debug\2024_05_03_Hallgato.exe
+h:\2023-2024\11.c csop 2 AAF\2024_05_03_Hallgato\2024_05_03_Hallgato\obj\Debug\2024_05_03_Hallgato.pdb
