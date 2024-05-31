@@ -22,6 +22,8 @@ namespace _2024_05_10_Vektorok
 
             Console.WriteLine("Vektorok átlagának hossza: " + AtlagHossz(vektorok));
 
+            Console.WriteLine("");
+
             Console.ReadLine();
         }
 
